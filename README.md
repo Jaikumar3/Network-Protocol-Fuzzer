@@ -289,7 +289,7 @@ Location: C:/Users/stadmin1.STZUG4/Documents/Jai pentest/
 Format: [protocol]_[version]_[unique_id]_fuzz_results.db
 
 Examples:
-- udp_ipv6_fdc6_16d7_4e65_f51_fc10_9b40_688a_e9e6_5683_1730198432_fuzz_results.db
+- udp_ipv6_fdc6_16d7_4e5_f51_fc0_9b40_688a_e9e6_583_1730198432_fuzz_results.db
 - tcp_ipv4_192_168_1_100_80_1730198433_fuzz_results.db
 ```
 
@@ -298,7 +298,7 @@ Examples:
 Format: [protocol]_[version]_[unique_id]_boofuzz_report.html
 
 Examples:  
-- udp_ipv6_fd35_156e_94e2_1_e622_98f1_b8b8_64cc_5683_1730198432_boofuzz_report.html
+- udp_ipv6_f5_156e_942_1_e622_98f1_bb8_64cc_583_1730198432_boofuzz_report.html
 - tcp_ipv4_192_168_1_100_80_1730198433_boofuzz_report.html
 ```
 
@@ -339,10 +339,10 @@ ping fd35:156e:94e2:1:e622:98f1:b8b8:64cc
 #### Monitor Network Traffic
 ```bash
 # Wireshark filter for your fuzzing
-ipv6.dst == fd35:156e:94e2:1:e622:98f1:b8b8:64cc and udp.dstport == 5683
+ipv6.dst == fd35:15e:94e2:1:e622:98f1:8b8:4cc and udp.dstport == 5683
 
 # tcpdump capture
-tcpdump -i any "host fd35:156e:94e2:1:e622:98f1:b8b8:64cc and port 5683"
+tcpdump -i any "host fd5:156e:94e2:1:e62:9f1:b8b8:64cc and port 5683"
 ```
 
 ## 🎯 Target Analysis
@@ -378,9 +378,9 @@ Fuzzing: Plain text tests TLS parser
 ### 1. Comprehensive IPv6 Testing
 ```bash
 # Test multiple protocols on same target
-python ipv6_fuzzer.py --ip fd35:156e:94e2:1:e622:98f1:b8b8:64cc --port 5683 --protocol udp --parallel
-python ipv6_fuzzer.py --ip fd35:156e:94e2:1:e622:98f1:b8b8:64cc --port 80 --protocol tcp --parallel
-python ipv6_fuzzer.py --ip fd35:156e:94e2:1:e622:98f1:b8b8:64cc --port 443 --protocol tcp --parallel
+python ipv6_fuzzer.py --ip fd5:56e:94e2:1:e62:981:bb8:4cc --port 5683 --protocol udp --parallel
+python ipv6_fuzzer.py --ip fd5:16e:942:1:e62:8f1:bb8:4cc --port 80 --protocol tcp --parallel
+python ipv6_fuzzer.py --ip fd5:156e:9e2:1:e62:9f1:bb8:64cc --port 443 --protocol tcp --parallel
 ```
 
 ### 2. Network Range Testing
@@ -394,7 +394,7 @@ done
 ### 3. Protocol-Specific Testing
 ```bash
 # CoAP fuzzing with extended timeout
-python ipv6_fuzzer.py --ip fd35:156e:94e2:1:e622:98f1:b8b8:64cc --port 5683 --protocol udp --timeout 30
+python ipv6_fuzzer.py --ip f5:16e:92:1:e22:8f1:b8:6cc --port 5683 --protocol udp --timeout 30
 
 # SSH fuzzing  
 python ipv6_fuzzer.py --ip target::1 --port 22 --protocol tcp --timeout 10
