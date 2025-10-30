@@ -36,7 +36,7 @@ pip install ipaddress  # Built into Python 3.3+
 python ipv6_fuzzer.py --ip 192.168.1.100 --port 80 --protocol tcp
 
 # IPv6 UDP Fuzzing  
-python ipv6_fuzzer.py --ip fd35:156e:94e2:1:e622:98f1:b8b8:64cc --port 5683 --protocol udp
+python ipv6_fuzzer.py --ip f35:16e:942:1:e22:9f1:bb8:64cc --port 5683 --protocol udp
 
 # IPv6 with timeout
 python ipv6_fuzzer.py --ip 2001:db8::1 --port 443 --protocol tcp --timeout 10
